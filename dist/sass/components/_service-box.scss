@@ -1,0 +1,70 @@
+.service {
+  &__box {
+    width: 80%;
+    padding: 20px 40px;
+    display: flex;
+    // border: 3px solid $text-color-tertiary;
+    border-radius: 12px;
+    background-color: #f3f8fa;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 20px 5px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__icon {
+    &-container {
+      //   width: 100px;
+      margin-right: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    width: 90px;
+  }
+
+  &__details {
+    text-align: left;
+    position: relative;
+    z-index: 2;
+
+    & > h3,
+    & > p {
+      transition: all 0.6s;
+    }
+  }
+
+  &__indicator {
+    // background-color: #288d8c;
+    background-image: radial-gradient(#288d8c, #4bbebd);
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    right: -20px;
+    top: -20px;
+    z-index: 1;
+    transition: all 0.8s ease-out;
+  }
+
+  &:hover > &__indicator {
+    // background-image: radial-gradient(90deg, #f3f8fa 31%, #288d8c 10%);
+    transform: scale(30, 20);
+  }
+
+  &:hover > &__details > h3,
+  &:hover > &__details > p {
+    color: white;
+  }
+}
