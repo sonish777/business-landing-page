@@ -1,0 +1,103 @@
+.members__card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  justify-content: center;
+  grid-gap: 16px;
+}
+
+.member {
+  &__card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    // cursor: pointer;
+
+    &:hover > &-img {
+      filter: opacity(0.8) blur(3px);
+    }
+
+    &-img {
+      height: 400px;
+      background-size: cover;
+      background-position: bottom;
+      transition: all 0.6s ease-out;
+    }
+
+    &-jelly {
+      padding: 30px 30px;
+      position: absolute;
+      bottom: -20%;
+      left: 0;
+      width: 100%;
+      display: inline-block;
+      background-color: #f3f8fa;
+      opacity: 0;
+      height: 120px;
+      transition: all 0.3s;
+      z-index: 1;
+      //   perspective: 2000px;
+    }
+
+    &-details {
+      position: absolute;
+      bottom: -20%;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: all 0.4s;
+    }
+
+    &:hover > &-details {
+      opacity: 1;
+      bottom: 20px;
+      animation: wiggleUpDown 0.4s 0.4s ease-in;
+      z-index: 2;
+    }
+
+    &:hover > &-jelly {
+      bottom: -20px;
+      opacity: 1;
+      animation: easeOutElastic 0.5s 0.1s forwards;
+    }
+
+    &-icons {
+      text-align: left;
+      padding: 20px;
+      position: absolute;
+      bottom: -20%;
+      opacity: 0;
+      transition: all 0.3s 0.1s ease-out;
+    }
+
+    &:hover > &-icons {
+      bottom: 100px;
+      opacity: 1;
+    }
+
+    &-bubble {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: white;
+      display: inline-block;
+      margin-right: 30px;
+    }
+
+    &:hover &-bubble-1 {
+      animation: wiggleDownUp 0.3s 0.3s ease-out;
+    }
+
+    &:hover &-bubble-2 {
+      animation: wiggleDownUp 0.5s 0.3s ease-out;
+    }
+
+    &:hover &-bubble-3 {
+      animation: wiggleDownUp 0.6s 0.3s ease-out;
+    }
+  }
+}
+
+.social-icon {
+  width: 100%;
+  object-fit: cover;
+}
